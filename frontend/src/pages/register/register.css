@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f6f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  transform: translateY(-15px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* For pseudo-element positioning */
+}
+
+/* Blurred background for the container */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-15px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+
+  background: url("./container-bg.png") no-repeat center center/cover;
+  filter: blur(60px);
+  z-index: -1;
+}
+
+.left-side,
+.right-side {
+  padding: 40px;
+  width: 50%;
+}
+
+.left-side {
+  /* background: rgba(0, 123, 255, 0.9); /* Semi-transparent blue background */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* For text to be above the background image */
+  z-index: 1; /* Ensure text is above the background image */
+}
+
+.left-side h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.left-side p {
+  font-size: 16px;
+}
+
+.right-side {
+  color: #fff;
+  /* background: rgba(255, 255, 255, 0.9); Semi-transparent white background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; /* For form to be above the background image */
+  z-index: 1; /* Ensure form is above the background image */
+}
+
+.right-side h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.input-field input,
+.input-field select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background: #0056b3;
+}
